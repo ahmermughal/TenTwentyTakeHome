@@ -28,6 +28,10 @@ class MovieFullCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func set(movie: Movie){
+        movieTitleLabel.text = movie.title
+        movieImageView.backgroundColor = .purple
+    }
     
     private func configure(){
         self.backgroundColor = .clear

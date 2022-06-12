@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import RxSwift
 import NSObject_Rx
-class WatchVC: UIViewController, BindableType {
+class WatchVC: LoadingViewController, BindableType {
         
 
     var viewModel: WatchViewModel!
@@ -37,29 +38,25 @@ class WatchVC: UIViewController, BindableType {
             print(movies)
         }).disposed(by: rx.disposeBag)
         
-        viewModel.currentState.asObservable().subscribe(onNext:{ state in
-            print("State: \(state)")
+        viewModel.currentState.asObservable().observe(on: MainScheduler.instance).subscribe(onNext:{ [weak self] state in
+            switch state{
+            case .loading:
+                self?.showLoadingView()
+            case .notLoading:
+                self?.dismissLoadingView()
+            }
         }).disposed(by: rx.disposeBag)
         
+        viewModel.movies.drive(tableView.rx.items(cellIdentifier: MovieFullCell.reuseID)){ index, model, cell in
+            guard let cell = cell as? MovieFullCell else{
+                return
+            }
+            cell.set(movie: model)
+        }.disposed(by: rx.disposeBag)
+        
         
     }
 
-}
-
-extension WatchVC : UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: MovieFullCell.reuseID, for: indexPath) as! MovieFullCell
-        
-        cell.movieImageView.backgroundColor = .red
-        cell.movieTitleLabel.text = "Harry Potter and the Chamber of Secrets"
-        return cell
-    }
-    
-    
 }
 
 extension WatchVC{
@@ -80,7 +77,6 @@ extension WatchVC{
     }
     
     private func configureTableView(){
-        tableView.dataSource = self
         tableView.backgroundColor = .clear
         tableView.register(MovieFullCell.self, forCellReuseIdentifier: MovieFullCell.reuseID)
         tableView.rowHeight = 230
