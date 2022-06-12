@@ -6,12 +6,19 @@
 //
 
 import Foundation
-
+import RxSwift
+import RxCocoa
 class MovieDetailsViewModel{
-    let movie: Movie
+    
+    let dBag = DisposeBag()
+    
+    let _movie = BehaviorRelay<Movie?>(value: nil)
+    var movie : Driver<Movie?>{
+        return _movie.asDriver(onErrorJustReturn: nil)
+    }
     
     init(movie: Movie){
-        self.movie = movie
+        _movie.accept(movie)
     }
     
 }

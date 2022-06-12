@@ -10,7 +10,6 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 class WatchVC: LoadingViewController, BindableType {
-        
 
     var viewModel: WatchViewModel!
     
@@ -29,19 +28,24 @@ class WatchVC: LoadingViewController, BindableType {
         layoutTableView()
         setupListeners()
     }
-
-    @objc private func searchButtonTapped(){
-        let vc = SearchVC()
-        self.present(vc, animated: true)
-    }
     
     func setupListeners(){
 
         tableView.rx.modelSelected(Movie.self).subscribe{[weak self] item in
             self?.pushMovieDetailsVC(movie: item)
         }.disposed(by: rx.disposeBag)
+        
+        headerSearchButton.rx.tap.subscribe{[weak self] _ in
+            self?.presentSearchVC()
+        }.disposed(by: rx.disposeBag)
+        
     }
     
+    
+    private func presentSearchVC(){
+        let vc = SearchVC()
+        present(vc, animated: true)
+    }
     
     
     func bindViewModel() {
@@ -89,7 +93,7 @@ extension WatchVC{
         headerTitleLabel.textColor = .label
         headerSearchButton.setImage(MovieImages.searchIcon.withRenderingMode(.alwaysTemplate), for: .normal)
         headerSearchButton.tintColor = .label
-        headerSearchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+
     }
     
     private func configureTableView(){

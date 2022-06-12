@@ -31,7 +31,9 @@ class MovieTabBarController: UITabBarController {
         let vc = WatchVC()
         vc.bindViewModel(to: WatchViewModel())
         vc.tabBarItem = UITabBarItem(title: StringConstants.watch, image: MovieImages.watchIcon, tag: 1)
-        return UINavigationController(rootViewController: vc)
+        let nc = UINavigationController(rootViewController: vc)
+        nc.navigationBar.isHidden = true
+        return nc
     }
     
 

@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
+import RxSwift
+import NSObject_Rx
 class MovieDetailsVC: LoadingViewController, BindableType {
+    
     
     var viewModel: MovieDetailsViewModel!
     let tableView = UITableView()
@@ -18,10 +20,22 @@ class MovieDetailsVC: LoadingViewController, BindableType {
         configureUI()
         layoutUI()
     }
-
+    
     func bindViewModel() {
-        
+        viewModel.movie.asObservable().subscribe{ [weak self] item in
+            guard let self = self else {return}
+            print(item)
+            if let element = item.element, let movie = element {
+                
+                let headerView = MovieDetailsHeader(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.width), imageUrl: movie.posterPath, text: movie.title)
+                
+                self.tableView.tableHeaderView = headerView
+                
+            }
+
+        }.disposed(by: rx.disposeBag)
     }
+    
 }
 
 extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
@@ -35,19 +49,19 @@ extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollV
             return cell
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: MovieOverviewCell.reuseID, for: indexPath) as! MovieOverviewCell
-            cell.descriptionLabel.text = "aasdasjkdhasjdhasjkdhaskjdhasjkdhaskjdhaskjdhasjkhdksjahdksjahdkjsahdaskjdhkasjdhasjkdhajskdhajkdasdasdasd"
+            cell.descriptionLabel.text = viewModel._movie.value?.overview
             return cell
         }
-
+        
     }
-
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let header = tableView.tableHeaderView as? MovieDetailsHeader else{
             return
         }
         header.scrollViewDidScroll(scrollView: scrollView)
     }
-
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0{
             return 100
@@ -62,17 +76,14 @@ extension MovieDetailsVC{
     
     private func configureVC(){
         view.backgroundColor = MovieColors.secondaryBackgroundColor
-        navigationController?.navigationBar.isHidden = true
     }
     
     private func configureUI(){
-        let headerView = MovieDetailsHeader(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width), image: UIImage(named: "image-4")!, text: "Coming out July 21")
-        tableView.tableHeaderView = headerView
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(GenreCell.self, forCellReuseIdentifier: GenreCell.reuseID)
         tableView.register(MovieOverviewCell.self, forCellReuseIdentifier: MovieOverviewCell.reuseID)
-
+        
     }
     
     private func layoutUI(){
@@ -81,7 +92,7 @@ extension MovieDetailsVC{
         view.addSubview(tableView)
         
         NSLayoutConstraint.activate([
-        
+            
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),

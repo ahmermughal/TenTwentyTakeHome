@@ -6,27 +6,36 @@
 //
 
 import UIKit
-
+import RxSwift
 class MovieDetailsHeader: UIView {
-
+    
+    let dBag = DisposeBag()
+    
     private let imageView = UIImageView()
     private var containerView = UIView()
     
     private var containerViewHeight = NSLayoutConstraint()
     private var imageViewHeightConstraint = NSLayoutConstraint()
     private var imageViewBottomConstraint = NSLayoutConstraint()
-
+    
     private let getTicketsButton = MovieButton(title: StringConstants.getTicketButtonText, color: MovieColors.accentColor, outlined: false)
-
+    
     private let watchTrailerButton = MovieButton(title: StringConstants.watchTrailerButtonText, color: MovieColors.accentColor, outlined: true, image: MovieImages.playIcon)
     
     private let movieLabel = UILabel()
     
-    required init(frame: CGRect, image: UIImage, text: String) {
+    required init(frame: CGRect, imageUrl: String, text: String) {
         super.init(frame: frame)
         configure()
         layout()
-        imageView.image = image
+        
+        NetworkManager.shared.downloadImage(path: imageUrl)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext:{ [weak self] image in
+                self?.imageView.image = image
+                self?.imageView.contentMode = .scaleAspectFill
+            })
+            .disposed(by: dBag)
         movieLabel.text = text
         
     }
@@ -58,7 +67,7 @@ extension MovieDetailsHeader{
     }
     
     private func layout(){
-     
+        
         containerView.translatesAutoresizingMaskIntoConstraints = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(containerView)
@@ -89,7 +98,7 @@ extension MovieDetailsHeader{
             watchTrailerButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             watchTrailerButton.heightAnchor.constraint(equalToConstant: 60),
             watchTrailerButton.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.7),
-
+            
             getTicketsButton.bottomAnchor.constraint(equalTo: watchTrailerButton.topAnchor, constant: -8),
             getTicketsButton.centerXAnchor.constraint(equalTo: containerView.centerXAnchor),
             getTicketsButton.heightAnchor.constraint(equalToConstant: 60),
