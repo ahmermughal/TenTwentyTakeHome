@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 import NSObject_Rx
 class WatchVC: LoadingViewController, BindableType {
         
@@ -26,12 +27,22 @@ class WatchVC: LoadingViewController, BindableType {
         configureTableView()
         layoutUI()
         layoutTableView()
+        setupListeners()
     }
 
     @objc private func searchButtonTapped(){
         let vc = SearchVC()
         self.present(vc, animated: true)
     }
+    
+    func setupListeners(){
+
+        tableView.rx.modelSelected(Movie.self).subscribe{[weak self] item in
+            self?.pushMovieDetailsVC(movie: item)
+        }.disposed(by: rx.disposeBag)
+    }
+    
+    
     
     func bindViewModel() {
         viewModel.movies.asObservable().subscribe(onNext:{ movies in
@@ -53,7 +64,11 @@ class WatchVC: LoadingViewController, BindableType {
             }
             cell.set(movie: model)
         }.disposed(by: rx.disposeBag)
-        
+    }
+    
+    private func pushMovieDetailsVC(movie: Movie){
+        let vc = MovieDetailsVC()
+        navigationController?.pushViewController(vc, animated: true)
         
     }
 
