@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 import NSObject_Rx
 class WatchVC: LoadingViewController, BindableType {
-
+    // MARK: Variables and Views
     var viewModel: WatchViewModel!
     
     let headerView = UIView()
@@ -19,6 +19,7 @@ class WatchVC: LoadingViewController, BindableType {
     
     let tableView = UITableView()
     
+    // MARK: Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
@@ -29,6 +30,7 @@ class WatchVC: LoadingViewController, BindableType {
         setupListeners()
     }
     
+    // MARK: Functions
     func setupListeners(){
 
         tableView.rx.modelSelected(Movie.self).subscribe{[weak self] item in
@@ -79,6 +81,7 @@ class WatchVC: LoadingViewController, BindableType {
 
 }
 
+// MARK: UI Setup
 extension WatchVC{
     
     private func configureVC(){

@@ -9,16 +9,15 @@ import UIKit
 import RxSwift
 class MovieFullCell: UITableViewCell {
 
-    let dBag = DisposeBag()
-
-    
     static let reuseID = "MovieFullCell"
-    
+
+    // MARK: Variables and Views
+    let dBag = DisposeBag()
     let containerView = UIView()
     let movieImageView = UIImageView()
     let movieTitleLabel = UILabel()
     
-    
+    // MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configure()
@@ -30,6 +29,7 @@ class MovieFullCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: Functions
     func set(movie: Movie){
         movieTitleLabel.text = movie.title
         NetworkManager.shared.downloadImage(path: movie.posterPath)

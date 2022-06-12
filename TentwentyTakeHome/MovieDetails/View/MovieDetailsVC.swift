@@ -9,12 +9,14 @@ import UIKit
 import RxSwift
 import NSObject_Rx
 class MovieDetailsVC: LoadingViewController, BindableType {
-    
-    let backbutton = UIButton()
-    
+
     var viewModel: MovieDetailsViewModel!
+
+    // MARK: Views
+    let backbutton = UIButton()
     let tableView = UITableView()
     
+    // MARK: Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
@@ -23,6 +25,7 @@ class MovieDetailsVC: LoadingViewController, BindableType {
         setupListeners()
     }
     
+    // MARK: Functions
     func setupListeners(){
         backbutton.rx.tap.subscribe{[weak self] _ in
             guard let self = self else {return}
@@ -47,6 +50,7 @@ class MovieDetailsVC: LoadingViewController, BindableType {
     
 }
 
+// MARK: Tableview delegates
 extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         2
@@ -81,6 +85,7 @@ extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollV
     
 }
 
+// MARK: UP Setup
 extension MovieDetailsVC{
     
     private func configureVC(){

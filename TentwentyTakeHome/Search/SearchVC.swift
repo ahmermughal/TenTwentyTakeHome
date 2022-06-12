@@ -9,11 +9,12 @@ import UIKit
 
 class SearchVC: UIViewController {
     
-
+    // MARK: Views
     let headerView = UIView()
     let searchBarView = SearchBarView()
     let tableView = UITableView()
     
+    // MARK: Override Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
@@ -27,6 +28,7 @@ class SearchVC: UIViewController {
 
 }
 
+// MARK: TableView Delegates
 extension SearchVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
@@ -42,13 +44,14 @@ extension SearchVC : UITableViewDataSource{
     
     
 }
-
+ // MARK: SearchBarDelegate
 extension SearchVC: SearchBarViewDelegate{
     func closeSearch() {
         self.dismiss(animated: true)
     }
 }
 
+// MARK: UI Setup
 extension SearchVC{
     
     private func configureVC(){

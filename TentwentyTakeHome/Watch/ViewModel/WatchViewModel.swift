@@ -10,6 +10,9 @@ import RxSwift
 import RxCocoa
 class WatchViewModel{
     
+    
+    
+    // MARK: Variables and Observables
     let dBag = DisposeBag()
 
     private let _currentState = BehaviorRelay<AppState>(value: .notLoading)
@@ -23,12 +26,12 @@ class WatchViewModel{
         return _movies.asDriver(onErrorJustReturn: [])
     }
     
+    // MARK: Init
     init(){
         getUpcomingMovie()
     }
     
-
-    
+    // MARK: Functions
     func getUpcomingMovie(){
         NetworkManager.shared.getUpcomingMovies(page: 1)
             .do(onNext: { [weak self]  _ in

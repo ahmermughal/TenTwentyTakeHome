@@ -12,6 +12,7 @@ import Alamofire
 import RxAlamofire
 
 struct NetworkManager{
+    // MARK: Variables
     static let shared = NetworkManager()
     private let apiKey = "a8e1b456f003c5b5f64d2108ac8f34b1"
     private let imageBaseURL = URL(string: "https://image.tmdb.org/t/p/w500")!
