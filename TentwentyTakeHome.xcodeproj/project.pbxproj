@@ -15,6 +15,7 @@
 		C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6FD2855D1FC001329F6 /* MovieTabBarController.swift */; };
 		C52FC7012855D514001329F6 /* MovieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC7002855D514001329F6 /* MovieImages.swift */; };
 		C52FC7032855DC63001329F6 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC7022855DC63001329F6 /* StringConstants.swift */; };
+		C52FC7052855DE88001329F6 /* MovieColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC7042855DE88001329F6 /* MovieColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C52FC6FD2855D1FC001329F6 /* MovieTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTabBarController.swift; sourceTree = "<group>"; };
 		C52FC7002855D514001329F6 /* MovieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImages.swift; sourceTree = "<group>"; };
 		C52FC7022855DC63001329F6 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		C52FC7042855DE88001329F6 /* MovieColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				C52FC7002855D514001329F6 /* MovieImages.swift */,
 				C52FC7022855DC63001329F6 /* StringConstants.swift */,
+				C52FC7042855DE88001329F6 /* MovieColors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				C52FC7032855DC63001329F6 /* StringConstants.swift in Sources */,
 				C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */,
 				C52FC6E72855CD94001329F6 /* SceneDelegate.swift in Sources */,
+				C52FC7052855DE88001329F6 /* MovieColors.swift in Sources */,
 				C52FC7012855D514001329F6 /* MovieImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
