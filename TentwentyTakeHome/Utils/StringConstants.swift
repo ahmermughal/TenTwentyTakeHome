@@ -13,5 +13,6 @@ enum StringConstants{
     static let watch = "Watch"
     static let mediaLibrary = "Media Library"
     static let more = "More"
+    static let searchBarPlaceholder = "TV shows, movies and more"
 
 }

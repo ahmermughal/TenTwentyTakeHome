@@ -15,6 +15,7 @@ enum MovieImages{
     static let mediaIcon = UIImage(named: "icon-media")!
     static let moreIcon = UIImage(named: "icon-more")!
     static let searchIcon = UIImage(systemName: "magnifyingglass")!
+    static let closeIcon = UIImage(systemName: "xmark")!
 
     
 

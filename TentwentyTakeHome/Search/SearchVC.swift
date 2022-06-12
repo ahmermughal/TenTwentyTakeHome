@@ -11,7 +11,7 @@ class SearchVC: UIViewController {
     
 
     let headerView = UIView()
-    
+    let searchBarView = SearchBarView()
     let tableView = UITableView()
     
     override func viewDidLoad() {
@@ -67,13 +67,21 @@ extension SearchVC{
         headerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(headerView)
     
+        searchBarView.translatesAutoresizingMaskIntoConstraints = false
+        headerView.addSubview(searchBarView)
         
         NSLayoutConstraint.activate([
         
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 100),
+            headerView.heightAnchor.constraint(equalToConstant: 120),
+
+            searchBarView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -16),
+            searchBarView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            searchBarView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            searchBarView.heightAnchor.constraint(equalToConstant: 55),
+            
             
         ])
         
