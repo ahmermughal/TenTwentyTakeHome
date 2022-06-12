@@ -10,6 +10,7 @@ import RxSwift
 import NSObject_Rx
 class MovieDetailsVC: LoadingViewController, BindableType {
     
+    let backbutton = UIButton()
     
     var viewModel: MovieDetailsViewModel!
     let tableView = UITableView()
@@ -19,6 +20,14 @@ class MovieDetailsVC: LoadingViewController, BindableType {
         configureVC()
         configureUI()
         layoutUI()
+        setupListeners()
+    }
+    
+    func setupListeners(){
+        backbutton.rx.tap.subscribe{[weak self] _ in
+            guard let self = self else {return}
+            self.navigationController?.popViewController(animated: true)
+        }.disposed(by: rx.disposeBag)
     }
     
     func bindViewModel() {
@@ -84,12 +93,20 @@ extension MovieDetailsVC{
         tableView.register(GenreCell.self, forCellReuseIdentifier: GenreCell.reuseID)
         tableView.register(MovieOverviewCell.self, forCellReuseIdentifier: MovieOverviewCell.reuseID)
         
+        let largeConfig = UIImage.SymbolConfiguration(pointSize: 36, weight: .bold, scale: .large)
+        
+        let largeBoldIcon = UIImage(systemName: "arrow.left.circle.fill", withConfiguration: largeConfig)?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        
+        backbutton.setImage(largeBoldIcon, for: .normal)
     }
     
     private func layoutUI(){
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
+        
+        backbutton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(backbutton)
         
         NSLayoutConstraint.activate([
             
@@ -98,6 +115,10 @@ extension MovieDetailsVC{
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             
+            backbutton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            backbutton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            backbutton.heightAnchor.constraint(equalToConstant: 36),
+            backbutton.widthAnchor.constraint(equalToConstant: 36)
             
         ])
         
