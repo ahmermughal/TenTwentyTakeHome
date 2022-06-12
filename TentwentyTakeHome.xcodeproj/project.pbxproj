@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F15846DB44A2CF0DF7CA3B0 /* Pods_TentwentyTakeHome.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE7DFD1FD6787EE954579C9 /* Pods_TentwentyTakeHome.framework */; };
 		C52FC6E52855CD94001329F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6E42855CD94001329F6 /* AppDelegate.swift */; };
 		C52FC6E72855CD94001329F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6E62855CD94001329F6 /* SceneDelegate.swift */; };
 		C52FC6E92855CD94001329F6 /* WatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6E82855CD94001329F6 /* WatchVC.swift */; };
@@ -25,9 +26,14 @@
 		C52FC71928561683001329F6 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC71828561683001329F6 /* GenreCell.swift */; };
 		C576666128561CA000A46BA1 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576666028561CA000A46BA1 /* GenreCollectionViewCell.swift */; };
 		C5766663285629EC00A46BA1 /* MovieOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5766662285629EC00A46BA1 /* MovieOverviewCell.swift */; };
+		C576666628562EB700A46BA1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576666528562EB700A46BA1 /* NetworkManager.swift */; };
+		C576666828562F4B00A46BA1 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576666728562F4B00A46BA1 /* NetworkError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FE7DFD1FD6787EE954579C9 /* Pods_TentwentyTakeHome.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TentwentyTakeHome.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CB78A91A543655233B4BC61 /* Pods-TentwentyTakeHome.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TentwentyTakeHome.release.xcconfig"; path = "Target Support Files/Pods-TentwentyTakeHome/Pods-TentwentyTakeHome.release.xcconfig"; sourceTree = "<group>"; };
+		741783B1DB7782AFABA6E340 /* Pods-TentwentyTakeHome.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TentwentyTakeHome.debug.xcconfig"; path = "Target Support Files/Pods-TentwentyTakeHome/Pods-TentwentyTakeHome.debug.xcconfig"; sourceTree = "<group>"; };
 		C52FC6E12855CD94001329F6 /* TentwentyTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TentwentyTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C52FC6E42855CD94001329F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C52FC6E62855CD94001329F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +54,8 @@
 		C52FC71828561683001329F6 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		C576666028561CA000A46BA1 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
 		C5766662285629EC00A46BA1 /* MovieOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieOverviewCell.swift; sourceTree = "<group>"; };
+		C576666528562EB700A46BA1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C576666728562F4B00A46BA1 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,17 +63,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F15846DB44A2CF0DF7CA3B0 /* Pods_TentwentyTakeHome.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2CA93A9F3F1680EDE3372257 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FE7DFD1FD6787EE954579C9 /* Pods_TentwentyTakeHome.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C52FC6D82855CD94001329F6 = {
 			isa = PBXGroup;
 			children = (
 				C52FC6E32855CD94001329F6 /* TentwentyTakeHome */,
 				C52FC6E22855CD94001329F6 /* Products */,
+				C6F92848EADB51A8E4468D1C /* Pods */,
+				2CA93A9F3F1680EDE3372257 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +99,7 @@
 		C52FC6E32855CD94001329F6 /* TentwentyTakeHome */ = {
 			isa = PBXGroup;
 			children = (
+				C576666428562EA700A46BA1 /* Managers */,
 				C52FC6FF2855D4FD001329F6 /* Utils */,
 				C52FC6FA2855D1B2001329F6 /* Custom Components */,
 				C52FC70F28560235001329F6 /* MovieDetails */,
@@ -191,6 +211,24 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		C576666428562EA700A46BA1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C576666528562EB700A46BA1 /* NetworkManager.swift */,
+				C576666728562F4B00A46BA1 /* NetworkError.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C6F92848EADB51A8E4468D1C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				741783B1DB7782AFABA6E340 /* Pods-TentwentyTakeHome.debug.xcconfig */,
+				5CB78A91A543655233B4BC61 /* Pods-TentwentyTakeHome.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -198,9 +236,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C52FC6F52855CD96001329F6 /* Build configuration list for PBXNativeTarget "TentwentyTakeHome" */;
 			buildPhases = (
+				90A007F718E5AF39C3AE2796 /* [CP] Check Pods Manifest.lock */,
 				C52FC6DD2855CD94001329F6 /* Sources */,
 				C52FC6DE2855CD94001329F6 /* Frameworks */,
 				C52FC6DF2855CD94001329F6 /* Resources */,
+				E5F7613F8E2F21DD686824F9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -256,6 +296,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90A007F718E5AF39C3AE2796 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TentwentyTakeHome-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5F7613F8E2F21DD686824F9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TentwentyTakeHome/Pods-TentwentyTakeHome-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TentwentyTakeHome/Pods-TentwentyTakeHome-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TentwentyTakeHome/Pods-TentwentyTakeHome-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C52FC6DD2855CD94001329F6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -271,10 +353,12 @@
 				C576666128561CA000A46BA1 /* GenreCollectionViewCell.swift in Sources */,
 				C52FC71428560630001329F6 /* MovieDetailsHeader.swift in Sources */,
 				C5766663285629EC00A46BA1 /* MovieOverviewCell.swift in Sources */,
+				C576666628562EB700A46BA1 /* NetworkManager.swift in Sources */,
 				C52FC7032855DC63001329F6 /* StringConstants.swift in Sources */,
 				C52FC71928561683001329F6 /* GenreCell.swift in Sources */,
 				C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */,
 				C52FC6E72855CD94001329F6 /* SceneDelegate.swift in Sources */,
+				C576666828562F4B00A46BA1 /* NetworkError.swift in Sources */,
 				C52FC7052855DE88001329F6 /* MovieColors.swift in Sources */,
 				C52FC7012855D514001329F6 /* MovieImages.swift in Sources */,
 			);
@@ -412,6 +496,7 @@
 		};
 		C52FC6F62855CD96001329F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 741783B1DB7782AFABA6E340 /* Pods-TentwentyTakeHome.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -440,6 +525,7 @@
 		};
 		C52FC6F72855CD96001329F6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CB78A91A543655233B4BC61 /* Pods-TentwentyTakeHome.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
