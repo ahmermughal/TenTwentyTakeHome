@@ -27,7 +27,7 @@ class GenreCollectionViewCell: UICollectionViewCell {
     
     func configure(){
         pillView.layer.cornerRadius = 30/2
-        genreLabel.font = UIFont.systemFont(ofSize: 12)
+        genreLabel.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
         genreLabel.textAlignment = .center
         genreLabel.textColor = .white
         genreLabel.text = "Horror"

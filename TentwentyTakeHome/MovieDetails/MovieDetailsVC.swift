@@ -22,12 +22,19 @@ class MovieDetailsVC: UIViewController {
 
 extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: GenreCell.reuseID, for: indexPath) as! GenreCell
-        return cell
+        if indexPath.row == 0{
+            let cell = tableView.dequeueReusableCell(withIdentifier: GenreCell.reuseID, for: indexPath) as! GenreCell
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCell(withIdentifier: MovieOverviewCell.reuseID, for: indexPath) as! MovieOverviewCell
+            cell.descriptionLabel.text = "aasdasjkdhasjdhasjkdhaskjdhasjkdhaskjdhaskjdhasjkhdksjahdksjahdkjsahdaskjdhkasjdhasjkdhajskdhajkdasdasdasd"
+            return cell
+        }
+
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -37,6 +44,14 @@ extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollV
         header.scrollViewDidScroll(scrollView: scrollView)
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0{
+            return 100
+        }else{
+            return UITableView.automaticDimension
+        }
+    }
+    
 }
 
 extension MovieDetailsVC{
@@ -52,7 +67,8 @@ extension MovieDetailsVC{
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(GenreCell.self, forCellReuseIdentifier: GenreCell.reuseID)
-        tableView.rowHeight = 100
+        tableView.register(MovieOverviewCell.self, forCellReuseIdentifier: MovieOverviewCell.reuseID)
+
     }
     
     private func layoutUI(){

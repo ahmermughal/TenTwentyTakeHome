@@ -24,6 +24,7 @@
 		C52FC71728560E2A001329F6 /* MovieButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC71628560E2A001329F6 /* MovieButton.swift */; };
 		C52FC71928561683001329F6 /* GenreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC71828561683001329F6 /* GenreCell.swift */; };
 		C576666128561CA000A46BA1 /* GenreCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C576666028561CA000A46BA1 /* GenreCollectionViewCell.swift */; };
+		C5766663285629EC00A46BA1 /* MovieOverviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5766662285629EC00A46BA1 /* MovieOverviewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		C52FC71628560E2A001329F6 /* MovieButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieButton.swift; sourceTree = "<group>"; };
 		C52FC71828561683001329F6 /* GenreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCell.swift; sourceTree = "<group>"; };
 		C576666028561CA000A46BA1 /* GenreCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreCollectionViewCell.swift; sourceTree = "<group>"; };
+		C5766662285629EC00A46BA1 /* MovieOverviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieOverviewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 				C52FC71328560630001329F6 /* MovieDetailsHeader.swift */,
 				C52FC71828561683001329F6 /* GenreCell.swift */,
 				C576666028561CA000A46BA1 /* GenreCollectionViewCell.swift */,
+				C5766662285629EC00A46BA1 /* MovieOverviewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				C52FC71728560E2A001329F6 /* MovieButton.swift in Sources */,
 				C576666128561CA000A46BA1 /* GenreCollectionViewCell.swift in Sources */,
 				C52FC71428560630001329F6 /* MovieDetailsHeader.swift in Sources */,
+				C5766663285629EC00A46BA1 /* MovieOverviewCell.swift in Sources */,
 				C52FC7032855DC63001329F6 /* StringConstants.swift in Sources */,
 				C52FC71928561683001329F6 /* GenreCell.swift in Sources */,
 				C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */,
