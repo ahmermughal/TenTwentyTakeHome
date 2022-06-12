@@ -23,26 +23,26 @@ class MovieTabBarController: UITabBarController {
     // MARK: Functions
     func createDashboardNC() -> UINavigationController {
         let vc = WatchVC()
-        vc.tabBarItem = UITabBarItem(title: "Dashboard", image: MovieImages.dashboardIcon, tag: 0)
+        vc.tabBarItem = UITabBarItem(title: StringConstants.dashboard, image: MovieImages.dashboardIcon, tag: 0)
         return UINavigationController(rootViewController: vc)
     }
     
     func createWatchNC() ->  UINavigationController {
         let vc = WatchVC()
-        vc.tabBarItem = UITabBarItem(title: "Watch", image: MovieImages.watchIcon, tag: 1)
+        vc.tabBarItem = UITabBarItem(title: StringConstants.watch, image: MovieImages.watchIcon, tag: 1)
         return UINavigationController(rootViewController: vc)
     }
     
 
     func createMediaLibraryNC() -> UINavigationController {
         let vc = WatchVC()
-        vc.tabBarItem = UITabBarItem(title: "Media Library", image: MovieImages.mediaIcon, tag: 2)
+        vc.tabBarItem = UITabBarItem(title: StringConstants.mediaLibrary, image: MovieImages.mediaIcon, tag: 2)
         return UINavigationController(rootViewController: vc)
     }
     
     func createMoreNC() -> UINavigationController {
         let vc = WatchVC()
-        vc.tabBarItem = UITabBarItem(title: "More", image: MovieImages.moreIcon, tag: 1)
+        vc.tabBarItem = UITabBarItem(title: StringConstants.more, image: MovieImages.moreIcon, tag: 1)
         return UINavigationController(rootViewController: vc)
     }
     
