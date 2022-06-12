@@ -68,6 +68,7 @@ class WatchVC: LoadingViewController, BindableType {
     
     private func pushMovieDetailsVC(movie: Movie){
         let vc = MovieDetailsVC()
+        vc.bindViewModel(to: MovieDetailsViewModel(movie: movie))
         navigationController?.pushViewController(vc, animated: true)
         
     }

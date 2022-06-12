@@ -7,8 +7,9 @@
 
 import UIKit
 
-class MovieDetailsVC: UIViewController {
-
+class MovieDetailsVC: LoadingViewController, BindableType {
+    
+    var viewModel: MovieDetailsViewModel!
     let tableView = UITableView()
     
     override func viewDidLoad() {
@@ -18,6 +19,9 @@ class MovieDetailsVC: UIViewController {
         layoutUI()
     }
 
+    func bindViewModel() {
+        
+    }
 }
 
 extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
