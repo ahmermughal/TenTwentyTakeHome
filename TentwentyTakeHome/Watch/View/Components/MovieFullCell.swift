@@ -6,8 +6,10 @@
 //
 
 import UIKit
-
+import RxSwift
 class MovieFullCell: UITableViewCell {
+
+    let dBag = DisposeBag()
 
     
     static let reuseID = "MovieFullCell"
@@ -30,16 +32,27 @@ class MovieFullCell: UITableViewCell {
     
     func set(movie: Movie){
         movieTitleLabel.text = movie.title
-        movieImageView.backgroundColor = .purple
+        NetworkManager.shared.downloadImage(path: movie.posterPath)
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext:{ [weak self] image in
+                self?.movieImageView.image = image
+                self?.movieImageView.contentMode = .scaleAspectFill
+            })
+            .disposed(by: dBag)
     }
     
     private func configure(){
         self.backgroundColor = .clear
         self.selectionStyle = .none
         movieImageView.layer.cornerRadius = 10
-        
+        movieImageView.clipsToBounds = true
         movieTitleLabel.textColor = .white
-        movieTitleLabel.font = UIFont.preferredFont(forTextStyle: .title3)
+        movieTitleLabel.font = UIFont.preferredFont(forTextStyle: .title2)
+        movieTitleLabel.layer.shadowColor = UIColor.black.cgColor
+        movieTitleLabel.layer.shadowRadius = 3.0
+        movieTitleLabel.layer.shadowOpacity = 1.0
+        movieTitleLabel.layer.shadowOffset = CGSize(width: 4, height: 4)
+        movieTitleLabel.layer.masksToBounds = false
         movieTitleLabel.adjustsFontForContentSizeCategory = true
         movieTitleLabel.numberOfLines = 3
     }

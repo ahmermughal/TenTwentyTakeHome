@@ -14,6 +14,7 @@ import RxAlamofire
 struct NetworkManager{
     static let shared = NetworkManager()
     private let apiKey = "a8e1b456f003c5b5f64d2108ac8f34b1"
+    private let imageBaseURL = URL(string: "https://image.tmdb.org/t/p/w500")!
     private let baseURL = URL(string: "https://api.themoviedb.org/3/movie/")!
 
     // MARK: Get Functions
@@ -29,6 +30,37 @@ struct NetworkManager{
             .map { (data) in
                 return try JSONDecoder().decode(UpcomingMoviesResponse.self, from: data)
             }
+    }
+    
+    func downloadImage(path: String) -> Observable<UIImage?>{
+        let request : Observable<URLRequest> = Observable.create { (observer) -> Disposable in
+            
+            let url = self.imageBaseURL.appendingPathComponent(path)
+            var request = URLRequest(url: url)
+
+            request.url = url
+            request.httpMethod = "GET"
+            
+            observer.onNext(request)
+            observer.onCompleted()
+            
+            return Disposables.create()
+        }
+        
+        let session = URLSession.shared
+        
+        return request.flatMap { (request)  in
+            return session.rx.response(request: request)
+                .map{ response, data in
+                    switch response.statusCode {
+                    case 200 ..< 300:
+                        return UIImage(data: data)
+                    default:
+                        throw NetworkError.unableToComplete
+                    }
+                }
+        }
+        
     }
     
     // MARK: Private Functions
