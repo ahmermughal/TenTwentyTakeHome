@@ -22,12 +22,11 @@ class MovieDetailsVC: UIViewController {
 
 extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        20
+        1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CellID", for: indexPath)
-        cell.textLabel?.text = "This is a test"
+        let cell = tableView.dequeueReusableCell(withIdentifier: GenreCell.reuseID, for: indexPath) as! GenreCell
         return cell
     }
 
@@ -52,7 +51,8 @@ extension MovieDetailsVC{
         tableView.tableHeaderView = headerView
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellID")
+        tableView.register(GenreCell.self, forCellReuseIdentifier: GenreCell.reuseID)
+        tableView.rowHeight = 100
     }
     
     private func layoutUI(){

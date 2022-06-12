@@ -16,5 +16,6 @@ enum StringConstants{
     static let searchBarPlaceholder = "TV shows, movies and more"
     static let getTicketButtonText = "Get Tickets"
     static let watchTrailerButtonText = "Watch Trailer"
+    static let genres = "Genres"
 
 }
