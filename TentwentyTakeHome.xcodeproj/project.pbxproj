@@ -54,14 +54,30 @@
 		C52FC6E32855CD94001329F6 /* TentwentyTakeHome */ = {
 			isa = PBXGroup;
 			children = (
-				C52FC6E42855CD94001329F6 /* AppDelegate.swift */,
-				C52FC6E62855CD94001329F6 /* SceneDelegate.swift */,
-				C52FC6E82855CD94001329F6 /* HomeVC.swift */,
-				C52FC6ED2855CD96001329F6 /* Assets.xcassets */,
-				C52FC6EF2855CD96001329F6 /* LaunchScreen.storyboard */,
+				C52FC6F92855D0D1001329F6 /* Home */,
+				C52FC6F82855D0C2001329F6 /* Support */,
 				C52FC6F22855CD96001329F6 /* Info.plist */,
 			);
 			path = TentwentyTakeHome;
+			sourceTree = "<group>";
+		};
+		C52FC6F82855D0C2001329F6 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC6E42855CD94001329F6 /* AppDelegate.swift */,
+				C52FC6E62855CD94001329F6 /* SceneDelegate.swift */,
+				C52FC6ED2855CD96001329F6 /* Assets.xcassets */,
+				C52FC6EF2855CD96001329F6 /* LaunchScreen.storyboard */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		C52FC6F92855D0D1001329F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC6E82855CD94001329F6 /* HomeVC.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
