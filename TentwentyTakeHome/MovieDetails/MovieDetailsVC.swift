@@ -9,11 +9,33 @@ import UIKit
 
 class MovieDetailsVC: UIViewController {
 
+    let tableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureVC()
         configureUI()
         layoutUI()
+    }
+
+}
+
+extension MovieDetailsVC : UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellID", for: indexPath)
+        cell.textLabel?.text = "This is a test"
+        return cell
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard let header = tableView.tableHeaderView as? MovieDetailsHeader else{
+            return
+        }
+        header.scrollViewDidScroll(scrollView: scrollView)
     }
 
 }
@@ -26,12 +48,27 @@ extension MovieDetailsVC{
     }
     
     private func configureUI(){
-        
-        
+        let headerView = MovieDetailsHeader(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.width), image: UIImage(named: "image-4")!, text: "Coming out July 21")
+        tableView.tableHeaderView = headerView
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "CellID")
     }
     
     private func layoutUI(){
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        
+        NSLayoutConstraint.activate([
+        
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            
+            
+        ])
         
     }
     

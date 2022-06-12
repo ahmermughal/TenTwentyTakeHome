@@ -20,6 +20,8 @@
 		C52FC70B2855EF01001329F6 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC70A2855EF01001329F6 /* SearchVC.swift */; };
 		C52FC70E2855F068001329F6 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC70D2855F068001329F6 /* SearchBarView.swift */; };
 		C52FC71128560259001329F6 /* MovieDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC71028560259001329F6 /* MovieDetailsVC.swift */; };
+		C52FC71428560630001329F6 /* MovieDetailsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC71328560630001329F6 /* MovieDetailsHeader.swift */; };
+		C52FC71728560E2A001329F6 /* MovieButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC71628560E2A001329F6 /* MovieButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		C52FC70A2855EF01001329F6 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C52FC70D2855F068001329F6 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		C52FC71028560259001329F6 /* MovieDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsVC.swift; sourceTree = "<group>"; };
+		C52FC71328560630001329F6 /* MovieDetailsHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsHeader.swift; sourceTree = "<group>"; };
+		C52FC71628560E2A001329F6 /* MovieButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +108,7 @@
 		C52FC6FA2855D1B2001329F6 /* Custom Components */ = {
 			isa = PBXGroup;
 			children = (
+				C52FC71528560DB1001329F6 /* Buttons */,
 				C52FC6FB2855D1C2001329F6 /* TabBarController */,
 			);
 			path = "Custom Components";
@@ -155,9 +160,26 @@
 		C52FC70F28560235001329F6 /* MovieDetails */ = {
 			isa = PBXGroup;
 			children = (
+				C52FC7122856060E001329F6 /* Components */,
 				C52FC71028560259001329F6 /* MovieDetailsVC.swift */,
 			);
 			path = MovieDetails;
+			sourceTree = "<group>";
+		};
+		C52FC7122856060E001329F6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC71328560630001329F6 /* MovieDetailsHeader.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C52FC71528560DB1001329F6 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC71628560E2A001329F6 /* MovieButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,6 +258,8 @@
 				C52FC7082855E016001329F6 /* MovieFullCell.swift in Sources */,
 				C52FC6E52855CD94001329F6 /* AppDelegate.swift in Sources */,
 				C52FC70B2855EF01001329F6 /* SearchVC.swift in Sources */,
+				C52FC71728560E2A001329F6 /* MovieButton.swift in Sources */,
+				C52FC71428560630001329F6 /* MovieDetailsHeader.swift in Sources */,
 				C52FC7032855DC63001329F6 /* StringConstants.swift in Sources */,
 				C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */,
 				C52FC6E72855CD94001329F6 /* SceneDelegate.swift in Sources */,

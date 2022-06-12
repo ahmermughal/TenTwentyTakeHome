@@ -12,5 +12,5 @@ import UIKit
 enum MovieColors{
     
     static let secondaryBackgroundColor = UIColor(named: "color-background-secondary")!
-    
+    static let accentColor = UIColor(named: "color-accent")!
 }

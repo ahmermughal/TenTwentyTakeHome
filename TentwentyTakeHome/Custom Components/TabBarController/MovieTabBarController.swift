@@ -35,7 +35,7 @@ class MovieTabBarController: UITabBarController {
     
 
     func createMediaLibraryNC() -> UINavigationController {
-        let vc = WatchVC()
+        let vc = MovieDetailsVC()
         vc.tabBarItem = UITabBarItem(title: StringConstants.mediaLibrary, image: MovieImages.mediaIcon, tag: 2)
         return UINavigationController(rootViewController: vc)
     }
