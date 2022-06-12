@@ -13,10 +13,18 @@ import RxAlamofire
 
 struct NetworkManager{
     static let shared = NetworkManager()
-
+    private let apiKey = "a8e1b456f003c5b5f64d2108ac8f34b1"
     private let baseURL = URL(string: "https://api.themoviedb.org/3/movie/")!
 
+    // MARK: Get Functions
     
+    func getUpcomingMovies(page: Int)-> Observable<UpcomingMoviesResponse>{
+        
+        return buildRequestGet(path: "upcoming?api_key=\(apiKey)&language=en-US&page=\(page)", params: [])
+            .map { (data) in
+                return try JSONDecoder().decode(UpcomingMoviesResponse.self, from: data)
+            }
+    }
     
     // MARK: Private Functions
     private func buildRequestGet(path: String,  params: [(String, String)]) -> Observable<Data>{
