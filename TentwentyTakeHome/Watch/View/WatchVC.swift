@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import NSObject_Rx
 class WatchVC: UIViewController, BindableType {
         
 
@@ -33,6 +33,14 @@ class WatchVC: UIViewController, BindableType {
     }
     
     func bindViewModel() {
+        viewModel.movies.asObservable().subscribe(onNext:{ movies in
+            print(movies)
+        }).disposed(by: rx.disposeBag)
+        
+        viewModel.currentState.asObservable().subscribe(onNext:{ state in
+            print("State: \(state)")
+        }).disposed(by: rx.disposeBag)
+        
         
     }
 

@@ -20,7 +20,12 @@ struct NetworkManager{
     
     func getUpcomingMovies(page: Int)-> Observable<UpcomingMoviesResponse>{
         
-        return buildRequestGet(path: "upcoming?api_key=\(apiKey)&language=en-US&page=\(page)", params: [])
+        let params = [
+            ("api_key", apiKey),
+            ("page", String(page))
+        ]
+        
+        return buildRequestGet(path: "upcoming", params: params)
             .map { (data) in
                 return try JSONDecoder().decode(UpcomingMoviesResponse.self, from: data)
             }
@@ -32,7 +37,7 @@ struct NetworkManager{
             
             let url = self.baseURL.appendingPathComponent(path)
             var request = URLRequest(url: url)
-            let urlComponents = NSURLComponents(url: url, resolvingAgainstBaseURL: true)!
+            let urlComponents = NSURLComponents(url: url, resolvingAgainstBaseURL: false)!
             
             
             let queryItems = params.map { URLQueryItem(name: $0.0, value: $0.1) }

@@ -9,5 +9,5 @@ import Foundation
 
 enum AppState{
     case loading
-    case doneLoading
+    case notLoading
 }
