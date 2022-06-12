@@ -17,6 +17,7 @@
 		C52FC7032855DC63001329F6 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC7022855DC63001329F6 /* StringConstants.swift */; };
 		C52FC7052855DE88001329F6 /* MovieColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC7042855DE88001329F6 /* MovieColors.swift */; };
 		C52FC7082855E016001329F6 /* MovieFullCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC7072855E016001329F6 /* MovieFullCell.swift */; };
+		C52FC70B2855EF01001329F6 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC70A2855EF01001329F6 /* SearchVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C52FC7022855DC63001329F6 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
 		C52FC7042855DE88001329F6 /* MovieColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieColors.swift; sourceTree = "<group>"; };
 		C52FC7072855E016001329F6 /* MovieFullCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFullCell.swift; sourceTree = "<group>"; };
+		C52FC70A2855EF01001329F6 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 			children = (
 				C52FC6FF2855D4FD001329F6 /* Utils */,
 				C52FC6FA2855D1B2001329F6 /* Custom Components */,
+				C52FC7092855EEE6001329F6 /* Search */,
 				C52FC6F92855D0D1001329F6 /* Watch */,
 				C52FC6F82855D0C2001329F6 /* Support */,
 				C52FC6F22855CD96001329F6 /* Info.plist */,
@@ -125,6 +128,14 @@
 				C52FC7072855E016001329F6 /* MovieFullCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C52FC7092855EEE6001329F6 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC70A2855EF01001329F6 /* SearchVC.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				C52FC6E92855CD94001329F6 /* WatchVC.swift in Sources */,
 				C52FC7082855E016001329F6 /* MovieFullCell.swift in Sources */,
 				C52FC6E52855CD94001329F6 /* AppDelegate.swift in Sources */,
+				C52FC70B2855EF01001329F6 /* SearchVC.swift in Sources */,
 				C52FC7032855DC63001329F6 /* StringConstants.swift in Sources */,
 				C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */,
 				C52FC6E72855CD94001329F6 /* SceneDelegate.swift in Sources */,

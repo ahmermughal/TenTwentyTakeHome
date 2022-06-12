@@ -1,5 +1,5 @@
 //
-//  HomeVC.swift
+//  SearchVC.swift
 //  TentwentyTakeHome
 //
 //  Created by Ahmer Mughal on 6/12/22.
@@ -7,11 +7,10 @@
 
 import UIKit
 
-class WatchVC: UIViewController {
+class SearchVC: UIViewController {
+    
 
     let headerView = UIView()
-    let headerTitleLabel = UILabel()
-    let headerSearchButton = UIButton()
     
     let tableView = UITableView()
     
@@ -24,14 +23,11 @@ class WatchVC: UIViewController {
         layoutTableView()
     }
 
-    @objc private func searchButtonTapped(){
-        
-    }
     
 
 }
 
-extension WatchVC : UITableViewDataSource{
+extension SearchVC : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
@@ -47,7 +43,7 @@ extension WatchVC : UITableViewDataSource{
     
 }
 
-extension WatchVC{
+extension SearchVC{
     
     private func configureVC(){
         view.backgroundColor = MovieColors.secondaryBackgroundColor
@@ -56,12 +52,6 @@ extension WatchVC{
     
     private func configureUI(){
         headerView.backgroundColor = .systemBackground
-        headerTitleLabel.text = StringConstants.watch
-        headerTitleLabel.font = UIFont.preferredFont(forTextStyle: .title3)
-        headerTitleLabel.textColor = .label
-        headerSearchButton.setImage(MovieImages.searchIcon.withRenderingMode(.alwaysTemplate), for: .normal)
-        headerSearchButton.tintColor = .label
-        headerSearchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
     }
     
     private func configureTableView(){
@@ -76,12 +66,7 @@ extension WatchVC{
         
         headerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(headerView)
-        let views = [headerTitleLabel, headerSearchButton]
-        
-        for item in views{
-            item.translatesAutoresizingMaskIntoConstraints = false
-            headerView.addSubview(item)
-        }
+    
         
         NSLayoutConstraint.activate([
         
@@ -89,12 +74,6 @@ extension WatchVC{
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 100),
-            
-            headerTitleLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 24),
-            headerTitleLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -16),
-            
-            headerSearchButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -24),
-            headerSearchButton.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -16)
             
         ])
         
@@ -125,4 +104,5 @@ extension WatchVC{
     }
     
 }
+
 

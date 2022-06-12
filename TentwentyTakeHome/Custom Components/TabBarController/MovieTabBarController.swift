@@ -22,7 +22,7 @@ class MovieTabBarController: UITabBarController {
     
     // MARK: Functions
     func createDashboardNC() -> UINavigationController {
-        let vc = WatchVC()
+        let vc = SearchVC()
         vc.tabBarItem = UITabBarItem(title: StringConstants.dashboard, image: MovieImages.dashboardIcon, tag: 0)
         return UINavigationController(rootViewController: vc)
     }
