@@ -43,6 +43,12 @@ extension SearchVC : UITableViewDataSource{
     
 }
 
+extension SearchVC: SearchBarViewDelegate{
+    func closeSearch() {
+        self.dismiss(animated: true)
+    }
+}
+
 extension SearchVC{
     
     private func configureVC(){
@@ -52,6 +58,7 @@ extension SearchVC{
     
     private func configureUI(){
         headerView.backgroundColor = .systemBackground
+        searchBarView.delegate = self
     }
     
     private func configureTableView(){
@@ -75,7 +82,7 @@ extension SearchVC{
             headerView.topAnchor.constraint(equalTo: view.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 120),
+            headerView.heightAnchor.constraint(equalToConstant: 100),
 
             searchBarView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -16),
             searchBarView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),

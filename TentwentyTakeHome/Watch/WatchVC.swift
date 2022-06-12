@@ -25,7 +25,8 @@ class WatchVC: UIViewController {
     }
 
     @objc private func searchButtonTapped(){
-        
+        let vc = SearchVC()
+        self.present(vc, animated: true)
     }
     
 

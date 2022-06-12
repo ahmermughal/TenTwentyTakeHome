@@ -8,7 +8,7 @@
 import UIKit
 
 protocol SearchBarViewDelegate {
-    func searchTapped()
+     func closeSearch()
 }
 
 class SearchBarView: UIView {
@@ -33,10 +33,11 @@ class SearchBarView: UIView {
         self.layer.cornerRadius = 55/2
         self.backgroundColor = MovieColors.secondaryBackgroundColor
         closeButton.setImage(MovieImages.closeIcon.withTintColor(.label, renderingMode: .alwaysOriginal), for: .normal)
+        closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
     }
     
-    @objc func searchWasTapped(){
-        delegate?.searchTapped()
+    @objc func closeButtonTapped(){
+        delegate?.closeSearch()
     }
     
     private func layoutViews(){
