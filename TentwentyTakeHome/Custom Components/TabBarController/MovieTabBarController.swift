@@ -29,6 +29,7 @@ class MovieTabBarController: UITabBarController {
     
     func createWatchNC() ->  UINavigationController {
         let vc = WatchVC()
+        vc.bindViewModel(to: WatchViewModel())
         vc.tabBarItem = UITabBarItem(title: StringConstants.watch, image: MovieImages.watchIcon, tag: 1)
         return UINavigationController(rootViewController: vc)
     }

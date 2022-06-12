@@ -7,8 +7,11 @@
 
 import UIKit
 
-class WatchVC: UIViewController {
+class WatchVC: UIViewController, BindableType {
+        
 
+    var viewModel: WatchViewModel!
+    
     let headerView = UIView()
     let headerTitleLabel = UILabel()
     let headerSearchButton = UIButton()
@@ -29,6 +32,9 @@ class WatchVC: UIViewController {
         self.present(vc, animated: true)
     }
     
+    func bindViewModel() {
+        
+    }
 
 }
 
