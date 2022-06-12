@@ -21,6 +21,22 @@ class WatchVC: UIViewController {
 
 }
 
+extension WatchVC : UITableViewDataSource{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: MovieFullCell.reuseID, for: indexPath) as! MovieFullCell
+        
+        cell.movieImageView.backgroundColor = .red
+        cell.movieTitleLabel.text = "Harry Potter and the Chamber of Secrets"
+        return cell
+    }
+    
+    
+}
+
 extension WatchVC{
     
     private func configureVC(){
@@ -28,7 +44,11 @@ extension WatchVC{
     }
     
     private func configureUI(){
+        tableView.dataSource = self
         tableView.backgroundColor = .clear
+        tableView.register(MovieFullCell.self, forCellReuseIdentifier: MovieFullCell.reuseID)
+        tableView.rowHeight = 230
+        tableView.separatorStyle = .none
     }
     
     
@@ -46,7 +66,7 @@ extension WatchVC{
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             
             
         ])
