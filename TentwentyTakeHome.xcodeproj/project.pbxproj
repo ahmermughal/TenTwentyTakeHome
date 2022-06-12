@@ -9,19 +9,23 @@
 /* Begin PBXBuildFile section */
 		C52FC6E52855CD94001329F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6E42855CD94001329F6 /* AppDelegate.swift */; };
 		C52FC6E72855CD94001329F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6E62855CD94001329F6 /* SceneDelegate.swift */; };
-		C52FC6E92855CD94001329F6 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6E82855CD94001329F6 /* HomeVC.swift */; };
+		C52FC6E92855CD94001329F6 /* WatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6E82855CD94001329F6 /* WatchVC.swift */; };
 		C52FC6EE2855CD96001329F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C52FC6ED2855CD96001329F6 /* Assets.xcassets */; };
 		C52FC6F12855CD96001329F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C52FC6EF2855CD96001329F6 /* LaunchScreen.storyboard */; };
+		C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC6FD2855D1FC001329F6 /* MovieTabBarController.swift */; };
+		C52FC7012855D514001329F6 /* MovieImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C52FC7002855D514001329F6 /* MovieImages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C52FC6E12855CD94001329F6 /* TentwentyTakeHome.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TentwentyTakeHome.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C52FC6E42855CD94001329F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C52FC6E62855CD94001329F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C52FC6E82855CD94001329F6 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		C52FC6E82855CD94001329F6 /* WatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchVC.swift; sourceTree = "<group>"; };
 		C52FC6ED2855CD96001329F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C52FC6F02855CD96001329F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C52FC6F22855CD96001329F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C52FC6FD2855D1FC001329F6 /* MovieTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTabBarController.swift; sourceTree = "<group>"; };
+		C52FC7002855D514001329F6 /* MovieImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieImages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +58,9 @@
 		C52FC6E32855CD94001329F6 /* TentwentyTakeHome */ = {
 			isa = PBXGroup;
 			children = (
-				C52FC6F92855D0D1001329F6 /* Home */,
+				C52FC6FF2855D4FD001329F6 /* Utils */,
+				C52FC6FA2855D1B2001329F6 /* Custom Components */,
+				C52FC6F92855D0D1001329F6 /* Watch */,
 				C52FC6F82855D0C2001329F6 /* Support */,
 				C52FC6F22855CD96001329F6 /* Info.plist */,
 			);
@@ -72,12 +78,36 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		C52FC6F92855D0D1001329F6 /* Home */ = {
+		C52FC6F92855D0D1001329F6 /* Watch */ = {
 			isa = PBXGroup;
 			children = (
-				C52FC6E82855CD94001329F6 /* HomeVC.swift */,
+				C52FC6E82855CD94001329F6 /* WatchVC.swift */,
 			);
-			path = Home;
+			path = Watch;
+			sourceTree = "<group>";
+		};
+		C52FC6FA2855D1B2001329F6 /* Custom Components */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC6FB2855D1C2001329F6 /* TabBarController */,
+			);
+			path = "Custom Components";
+			sourceTree = "<group>";
+		};
+		C52FC6FB2855D1C2001329F6 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC6FD2855D1FC001329F6 /* MovieTabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		C52FC6FF2855D4FD001329F6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C52FC7002855D514001329F6 /* MovieImages.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +180,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C52FC6E92855CD94001329F6 /* HomeVC.swift in Sources */,
+				C52FC6E92855CD94001329F6 /* WatchVC.swift in Sources */,
 				C52FC6E52855CD94001329F6 /* AppDelegate.swift in Sources */,
+				C52FC6FE2855D1FC001329F6 /* MovieTabBarController.swift in Sources */,
 				C52FC6E72855CD94001329F6 /* SceneDelegate.swift in Sources */,
+				C52FC7012855D514001329F6 /* MovieImages.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

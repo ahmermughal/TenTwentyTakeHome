@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class WatchVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
