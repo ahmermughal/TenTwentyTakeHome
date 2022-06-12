@@ -10,10 +10,13 @@ import UIKit
 
 enum MovieImages{
     
-    static let dashboardIcon = UIImage(named: "icon-dashboard")
-    static let watchIcon = UIImage(named: "icon-watch")
-    static let mediaIcon = UIImage(named: "icon-media")
-    static let moreIcon = UIImage(named: "icon-more")
+    static let dashboardIcon = UIImage(named: "icon-dashboard")!
+    static let watchIcon = UIImage(named: "icon-watch")!
+    static let mediaIcon = UIImage(named: "icon-media")!
+    static let moreIcon = UIImage(named: "icon-more")!
+    static let searchIcon = UIImage(systemName: "magnifyingglass")!
+
+    
 
     
 }
